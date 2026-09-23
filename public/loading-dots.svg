@@ -1,0 +1,58 @@
+<svg viewBox="0 0 210 30" width="210" height="30" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .titik {
+      fill: #FC9D6C;
+    }
+
+    .titik-1 { animation: muncul1 2s infinite; }
+    .titik-2 { animation: muncul2 2s infinite; }
+    .titik-3 { animation: muncul3 2s infinite; }
+    .titik-4 { animation: muncul4 2s infinite; }
+    .titik-5 { animation: muncul5 2s infinite; }
+    .titik-6 { animation: muncul6 2s infinite; }
+
+    /* Pembagian waktu untuk 6 titik (muncul bergantian, hilang bersamaan) */
+    @keyframes muncul1 { 
+      0%, 5% { opacity: 0; } 
+      10%, 90% { opacity: 1; } 
+      95%, 100% { opacity: 0; } 
+    }
+    
+    @keyframes muncul2 { 
+      0%, 20% { opacity: 0; } 
+      25%, 90% { opacity: 1; } 
+      95%, 100% { opacity: 0; } 
+    }
+    
+    @keyframes muncul3 { 
+      0%, 35% { opacity: 0; } 
+      40%, 90% { opacity: 1; } 
+      95%, 100% { opacity: 0; } 
+    }
+    
+    @keyframes muncul4 { 
+      0%, 50% { opacity: 0; } 
+      55%, 90% { opacity: 1; } 
+      95%, 100% { opacity: 0; } 
+    }
+    
+    @keyframes muncul5 { 
+      0%, 65% { opacity: 0; } 
+      70%, 90% { opacity: 1; } 
+      95%, 100% { opacity: 0; } 
+    }
+
+    @keyframes muncul6 { 
+      0%, 80% { opacity: 0; } 
+      85%, 90% { opacity: 1; } 
+      95%, 100% { opacity: 0; } 
+    }
+  </style>
+
+  <circle cx="15" cy="15" r="10" class="titik titik-1" />
+  <circle cx="50" cy="15" r="10" class="titik titik-2" />
+  <circle cx="85" cy="15" r="10" class="titik titik-3" />
+  <circle cx="120" cy="15" r="10" class="titik titik-4" />
+  <circle cx="155" cy="15" r="10" class="titik titik-5" />
+  <circle cx="190" cy="15" r="10" class="titik titik-6" />
+</svg>
