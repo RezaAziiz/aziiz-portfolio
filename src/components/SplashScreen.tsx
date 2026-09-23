@@ -9,8 +9,8 @@ const SplashScreen = ({ onDone }: Props) => {
 
   useEffect(() => {
     // After 2s start fade out, then call onDone after 600ms transition
-    const fadeTimer = setTimeout(() => setFading(true), 3000);
-    const doneTimer = setTimeout(() => onDone(), 3600);
+    const fadeTimer = setTimeout(() => setFading(true), 4000);
+    const doneTimer = setTimeout(() => onDone(), 4600);
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(doneTimer);
