@@ -1,35 +1,33 @@
-<svg viewBox="0 0 100 100" width="120" height="120" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="-20 -20 140 140" width="120" height="120" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
   <style>
     .batang-claude {
       stroke: #D97757;
       stroke-width: 6;
       stroke-linecap: round;
       transform-origin: 50px 50px;
-      animation: ripple 2.4s ease-in-out infinite;
+      animation: ripple 2.2s ease-in-out infinite;
     }
 
-    /* Gerakan cuma terjadi di 0%-50% (durasi aktif),
-       lalu diam dari 50%-100% (jeda sebelum ulang) */
+    /* Efek ripple gelombang berputar halus tanpa terpotong */
     @keyframes ripple {
       0%   { transform: scale(1); }
-      25%  { transform: scale(1.5); }
-      50%  { transform: scale(1); }
-	  75%  { transform: scale(1); }
-      100% { transform: scale(2); } /* diam sampai siklus berakhir */
+      20%  { transform: scale(1.35); }
+      40%  { transform: scale(1); }
+      100% { transform: scale(1); }
     }
 
-    g:nth-child(1) .batang-claude { animation-delay: 0.0s; }
-    g:nth-child(2) .batang-claude { animation-delay: 0.1s; }
-    g:nth-child(3) .batang-claude { animation-delay: 0.2s; }
-    g:nth-child(4) .batang-claude { animation-delay: 0.3s; }
-    g:nth-child(5) .batang-claude { animation-delay: 0.4s; }
-    g:nth-child(6) .batang-claude { animation-delay: 0.5s; }
-    g:nth-child(7) .batang-claude { animation-delay: 0.6s; }
-    g:nth-child(8) .batang-claude { animation-delay: 0.7s; }
-    g:nth-child(9) .batang-claude { animation-delay: 0.8s; }
-    g:nth-child(10) .batang-claude { animation-delay: 0.9s; }
-    g:nth-child(11) .batang-claude { animation-delay: 1.0s; }
-    g:nth-child(12) .batang-claude { animation-delay: 1.1s; }
+    g:nth-child(1) .batang-claude  { animation-delay: 0.0s; }
+    g:nth-child(2) .batang-claude  { animation-delay: 0.09s; }
+    g:nth-child(3) .batang-claude  { animation-delay: 0.18s; }
+    g:nth-child(4) .batang-claude  { animation-delay: 0.27s; }
+    g:nth-child(5) .batang-claude  { animation-delay: 0.36s; }
+    g:nth-child(6) .batang-claude  { animation-delay: 0.45s; }
+    g:nth-child(7) .batang-claude  { animation-delay: 0.54s; }
+    g:nth-child(8) .batang-claude  { animation-delay: 0.63s; }
+    g:nth-child(9) .batang-claude  { animation-delay: 0.72s; }
+    g:nth-child(10) .batang-claude { animation-delay: 0.81s; }
+    g:nth-child(11) .batang-claude { animation-delay: 0.90s; }
+    g:nth-child(12) .batang-claude { animation-delay: 0.99s; }
   </style>
 
   <g transform="rotate(0 50 50)"><line x1="50" y1="50" x2="50" y2="20" class="batang-claude" /></g>

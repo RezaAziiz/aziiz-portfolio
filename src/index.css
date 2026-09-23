@@ -2,21 +2,21 @@
 
 
 :root {
-  --bg: #F5F3EE;
-  --bg-card: #EDEAE2;
-  --bg-card-hover: #E5E0D5;
-  --border: #D9D4C8;
-  --border-light: #E4DFD4;
-  --accent: #C0441E;
-  --accent-hover: #A33818;
-  --text-primary: #1A1916;
-  --text-secondary: #6B6860;
-  --text-muted: #9A9790;
-  --nav-inactive: #B0ACA3;
-  --nav-active: #1A1916;
-  --tag-bg: #E5E0D5;
-  --tag-text: #4F4C45;
-  --shadow-card: 0 4px 20px rgba(26, 25, 22, 0.07), 0 1px 4px rgba(26, 25, 22, 0.04);
+  --bg: #EFECE4;               /* Rich warm cream / editorial paper */
+  --bg-card: #E4DFC8;          /* Sedikit lebih gelap & bertekstur cream */
+  --bg-card-hover: #DDD6C6;    /* Hover card cream hangat */
+  --border: #CFC7B4;           /* Border aksen lembut */
+  --border-light: #DDD7C7;
+  --accent: #B83E1B;           /* Terracotta / rust accent */
+  --accent-hover: #9E3314;
+  --text-primary: #1C1B18;
+  --text-secondary: #5C5850;
+  --text-muted: #8E897F;
+  --nav-inactive: #A39D92;
+  --nav-active: #1C1B18;
+  --tag-bg: rgba(184, 62, 27, 0.12);  /* Soft warm orange background */
+  --tag-text: #B83E1B;                 /* Warm terracotta orange text */
+  --shadow-card: 0 4px 20px rgba(35, 30, 20, 0.08), 0 1px 4px rgba(35, 30, 20, 0.04);
   --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --radius-sm: 6px;
   --radius: 8px;
