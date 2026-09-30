@@ -2,11 +2,13 @@ import type { Project } from "../data/projects";
 
 interface Props {
   project: Project;
+  translated: { title: string; subtitle: string };
 }
 
 const ExternalIcon = () => (
   <svg
-    width="12" height="12"
+    width="12"
+    height="12"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -18,13 +20,23 @@ const ExternalIcon = () => (
   </svg>
 );
 
-const ProjectItem = ({ project }: Props) => {
+const ProjectItem = ({ project, translated }: Props) => {
   return (
     <article className="project-item">
       {/* Thumbnail placeholder */}
       <div className="project-thumb">
         <div className="project-thumb-placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.35">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            opacity="0.35"
+          >
             <rect x="3" y="3" width="18" height="18" rx="2" />
             <circle cx="8.5" cy="8.5" r="1.5" />
             <polyline points="21 15 16 10 5 21" />
@@ -35,23 +47,29 @@ const ProjectItem = ({ project }: Props) => {
       {/* Info */}
       <div className="project-info">
         <div className="project-info-title-row">
-          <span className="project-info-name">
-            {project.title}
-          </span>
+          <span className="project-info-name">{translated.title}</span>
           <div className="project-info-links">
             {project.demoUrl && (
-              <a href={project.demoUrl} target="_blank" rel="noreferrer" className="project-ext-link" onClick={(e) => e.stopPropagation()}>
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="project-ext-link"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <ExternalIcon />
               </a>
             )}
           </div>
         </div>
 
-        <p className="project-info-desc">{project.subtitle}</p>
+        <p className="project-info-desc">{translated.subtitle}</p>
 
         <div className="project-info-tags">
           {project.tags.map((tag) => (
-            <span key={tag} className="tag">{tag}</span>
+            <span key={tag} className="tag">
+              {tag}
+            </span>
           ))}
         </div>
       </div>

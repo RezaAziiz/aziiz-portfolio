@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
+import { usePreferences } from "../contexts/PreferencesContext";
 
 const NAV_ITEMS = [
-  { id: "about", label: "About" },
-  { id: "experience", label: "Experience" },
-  { id: "projects", label: "Projects" },
-  { id: "stack", label: "Stack" },
-  { id: "contact", label: "Contact" },
+  { id: "about", label: "about" },
+  { id: "experience", label: "experience" },
+  { id: "projects", label: "projects" },
+  { id: "stack", label: "stack" },
+  { id: "contact", label: "contact" },
 ];
 
 const Sidebar = () => {
   const [activeSection, setActiveSection] = useState("about");
+  const { copy } = usePreferences();
 
   useEffect(() => {
     // Find the scrollable content container
@@ -26,7 +28,7 @@ const Sidebar = () => {
         root: scrollContainer,
         threshold: 0.3,
         rootMargin: "0px 0px -40% 0px",
-      }
+      },
     );
 
     NAV_ITEMS.forEach(({ id }) => {
@@ -48,16 +50,11 @@ const Sidebar = () => {
   return (
     <aside className="sidebar">
       {/* ── Identity ── */}
-      <h1 className="sidebar-name">
-        Reza Maulana
-      </h1>
+      <h1 className="sidebar-name">Reza Maulana Aziiz</h1>
       <div className="sidebar-role">Software Engineer</div>
       <div className="sidebar-role-location">Indonesia / Remote</div>
-      <p className="sidebar-tagline">
-        I build thoughtful software with a focus on resilient backend architectures,
-        reliable systems, and cohesive user experiences.
-      </p>
-      <span className="sidebar-availability">Available for engineering roles</span>
+      <p className="sidebar-tagline">{copy.sidebar.tagline}</p>
+      <span className="sidebar-availability">{copy.sidebar.availability}</span>
 
       {/* ── Nav ── */}
       <nav>
@@ -72,7 +69,7 @@ const Sidebar = () => {
                   scrollTo(id);
                 }}
               >
-                {label}
+                {copy.nav[label as keyof typeof copy.nav]}
               </a>
             </li>
           ))}
@@ -119,12 +116,20 @@ const Sidebar = () => {
           className="social-link"
           aria-label="Email"
         >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             <rect width="20" height="16" x="2" y="4" rx="2" />
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
           </svg>
         </a>
-
       </div>
     </aside>
   );

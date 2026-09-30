@@ -7,17 +7,19 @@ import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
 import Stack from "./sections/Stack";
 import Contact from "./sections/Contact";
+import Navbar from "./components/Navbar";
+import { PreferencesProvider } from "./contexts/PreferencesContext";
 
 function App() {
   const [splashDone, setSplashDone] = useState(false);
   const handleSplashDone = useCallback(() => setSplashDone(true), []);
 
   return (
-    <>
+    <PreferencesProvider>
       {!splashDone && <SplashScreen onDone={handleSplashDone} />}
 
       <div className={`app${splashDone ? " app--visible" : " app--hidden"}`}>
-        {/* Two-column layout: sidebar kiri statis, content kanan scroll */}
+        <Navbar />
         <Sidebar />
         <main className="content">
           <About />
@@ -27,7 +29,7 @@ function App() {
           <Contact />
         </main>
       </div>
-    </>
+    </PreferencesProvider>
   );
 }
 

@@ -2,14 +2,15 @@ import type { Experience } from "../data/experience";
 
 interface Props {
   experience: Experience;
+  translated: { role: string; bullets: string[] };
 }
 
-const ExperienceItem = ({ experience }: Props) => {
+const ExperienceItem = ({ experience, translated }: Props) => {
   return (
     <div className="exp-item">
       <div className="exp-item-header">
         <div className="exp-item-title-block">
-          <span className="exp-item-role">{experience.role}</span>
+          <span className="exp-item-role">{translated.role}</span>
           <span className="exp-item-company">
             <a href={experience.companyUrl} target="_blank" rel="noreferrer">
               {experience.company}
@@ -31,8 +32,8 @@ const ExperienceItem = ({ experience }: Props) => {
       </div>
 
       <div className="exp-item-desc">
-        {experience.bullets.map((bullet, i) => (
-          <p key={i}>{bullet}</p>
+        {translated.bullets.map((bullet) => (
+          <p key={bullet}>{bullet}</p>
         ))}
       </div>
 
