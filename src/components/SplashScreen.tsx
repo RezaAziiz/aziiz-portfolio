@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import photoUrl from "../../Assets/Foto_Portfolio_2.png";
 
 interface Props {
   onDone: () => void;
@@ -22,7 +23,7 @@ const SplashScreen = ({ onDone }: Props) => {
       <div className="splash-container">
         {/* Photo — top center */}
         <img
-          src="/Assets/Foto_Portfolio_2.png"
+          src={photoUrl}
           alt="Foto Portfolio"
           className="splash-photo"
           style={{ imageRendering: "pixelated" } as React.CSSProperties}

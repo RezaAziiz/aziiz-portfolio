@@ -1,5 +1,6 @@
 import { Languages, Sun, Moon, Download } from "lucide-react";
 import cvUrl from "../../Assets/Reza_Maulana_Aziiz_CV_Ind_Java.pdf";
+import photoUrl from "../../Assets/Foto_Portfolio_2.png";
 import { usePreferences } from "../contexts/PreferencesContext";
 import { useState, useRef, useEffect } from "react";
 
@@ -74,7 +75,7 @@ const Navbar = () => {
             aria-expanded={dropdownOpen}
           >
             <img
-              src="/Assets/Foto_Portfolio_2.png"
+              src={photoUrl}
               alt="Reza Maulana Aziiz"
               className="navbar-profile-img"
               style={{ imageRendering: "pixelated" } as React.CSSProperties}
@@ -85,7 +86,7 @@ const Navbar = () => {
             <div className="navbar-dropdown-menu">
               <div className="navbar-dropdown-header">
                 <img
-                  src="/Assets/Foto_Portfolio_2.png"
+                  src={photoUrl}
                   alt="Reza Maulana Aziiz"
                   className="navbar-dropdown-avatar"
                   style={{ imageRendering: "pixelated" } as React.CSSProperties}
