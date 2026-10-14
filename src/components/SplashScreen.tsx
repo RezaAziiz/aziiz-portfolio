@@ -19,28 +19,36 @@ const SplashScreen = ({ onDone }: Props) => {
 
   return (
     <div className={`splash${fading ? " splash--fade" : ""}`}>
-      <div className="splash-row">
-        {/* Claude logo — left */}
+      <div className="splash-container">
+        {/* Photo — top center */}
         <img
-          src="/claude-logo.svg"
-          alt="Claude logo"
-          className="splash-logo"
+          src="/Assets/Foto_Portfolio_2.png"
+          alt="Foto Portfolio"
+          className="splash-photo"
           style={{ imageRendering: "pixelated" } as React.CSSProperties}
         />
 
-        {/* Loading dots — middle */}
-        <img
-          src="/loading-dots.svg"
-          alt="Loading"
-          className="splash-dots"
-        />
+        <div className="splash-row">
+          {/* Claude logo — left */}
+          <img
+            src="/claude-logo.svg"
+            alt="Claude logo"
+            className="splash-logo"
+            style={{ imageRendering: "pixelated" } as React.CSSProperties}
+          />
 
-        {/* Claude Code character — right */}
-        <ClaudeCodePixel />
+          {/* Loading dots — middle */}
+          <img src="/loading-dots.svg" alt="Loading" className="splash-dots" />
+
+          {/* Claude Code character — right */}
+          <ClaudeCodePixel />
+        </div>
       </div>
     </div>
   );
 };
+
+export default SplashScreen;
 
 /* Inline pixel-art Claude Code — crisp at any size */
 const ClaudeCodePixel = () => (
@@ -48,7 +56,12 @@ const ClaudeCodePixel = () => (
     viewBox="-4 -4 32 32"
     xmlns="http://www.w3.org/2000/svg"
     className="splash-claudecode"
-    style={{ imageRendering: "pixelated", shapeRendering: "crispEdges" } as React.CSSProperties}
+    style={
+      {
+        imageRendering: "pixelated",
+        shapeRendering: "crispEdges",
+      } as React.CSSProperties
+    }
   >
     <style>{`
       .s-state { opacity: 0; animation-duration: 6s; animation-iteration-count: infinite; }
@@ -91,7 +104,10 @@ const ClaudeCodePixel = () => (
     `}</style>
     <g id="s-move">
       <g id="s-front" className="s-state">
-        <path d="M20.998 10.949H24v3.102h-3v3.028h-1.487V20H18v-2.921h-1.487V20H15v-2.921H9V20H7.488v-2.921H6V20H4.487v-2.921H3V14.05H0V10.95h3V5h17.998v5.949zM6 10.949h1.488V8.102H6v2.847zm10.51 0H18V8.102h-1.49v2.847z" fill="#D97757" />
+        <path
+          d="M20.998 10.949H24v3.102h-3v3.028h-1.487V20H18v-2.921h-1.487V20H15v-2.921H9V20H7.488v-2.921H6V20H4.487v-2.921H3V14.05H0V10.95h3V5h17.998v5.949zM6 10.949h1.488V8.102H6v2.847zm10.51 0H18V8.102h-1.49v2.847z"
+          fill="#D97757"
+        />
       </g>
       <g id="s-side" className="s-state">
         <g id="s-dir">
@@ -103,24 +119,41 @@ const ClaudeCodePixel = () => (
           <rect x="13" y="16" width="2" height="4" fill="#D97757" />
           <rect x="17" y="16" width="2" height="4" fill="#D97757" />
           <rect x="7" y="10" width="3" height="1" fill="#000" />
-          <rect x="14" y="9" width="2" height="2" fill="#000" className="s-blink" />
+          <rect
+            x="14"
+            y="9"
+            width="2"
+            height="2"
+            fill="#000"
+            className="s-blink"
+          />
         </g>
       </g>
       <g id="s-laptop" className="s-state">
         <rect x="4" y="6" width="14" height="11" fill="#D97757" />
-        <rect x="4" y="17" width="2" height="2" fill="#D97757" /><rect x="5" y="19" width="2" height="2" fill="#D97757" />
-        <rect x="8" y="17" width="2" height="2" fill="#D97757" /><rect x="9" y="19" width="2" height="2" fill="#D97757" />
-        <rect x="12" y="17" width="2" height="2" fill="#D97757" /><rect x="13" y="19" width="2" height="2" fill="#D97757" />
-        <rect x="16" y="17" width="2" height="2" fill="#D97757" /><rect x="17" y="19" width="2" height="2" fill="#D97757" />
-        <rect x="6" y="9" width="2" height="2" fill="#000" /><rect x="13" y="9" width="2" height="2" fill="#000" />
+        <rect x="4" y="17" width="2" height="2" fill="#D97757" />
+        <rect x="5" y="19" width="2" height="2" fill="#D97757" />
+        <rect x="8" y="17" width="2" height="2" fill="#D97757" />
+        <rect x="9" y="19" width="2" height="2" fill="#D97757" />
+        <rect x="12" y="17" width="2" height="2" fill="#D97757" />
+        <rect x="13" y="19" width="2" height="2" fill="#D97757" />
+        <rect x="16" y="17" width="2" height="2" fill="#D97757" />
+        <rect x="17" y="19" width="2" height="2" fill="#D97757" />
+        <rect x="6" y="9" width="2" height="2" fill="#000" />
+        <rect x="13" y="9" width="2" height="2" fill="#000" />
         <rect x="18" y="20" width="6" height="1" fill="#888" />
-        <rect x="22" y="18" width="1" height="2" fill="#888" /><rect x="23" y="16" width="1" height="2" fill="#888" />
+        <rect x="22" y="18" width="1" height="2" fill="#888" />
+        <rect x="23" y="16" width="1" height="2" fill="#888" />
         <rect x="24" y="14" width="1" height="2" fill="#888" />
-        <g className="s-tl"><rect x="15" y="16" width="3" height="2" fill="#D97757" /><rect x="18" y="18" width="2" height="2" fill="#D97757" /></g>
-        <g className="s-tr"><rect x="19" y="15" width="2" height="3" fill="#D97757" /><rect x="21" y="18" width="2" height="2" fill="#D97757" /></g>
+        <g className="s-tl">
+          <rect x="15" y="16" width="3" height="2" fill="#D97757" />
+          <rect x="18" y="18" width="2" height="2" fill="#D97757" />
+        </g>
+        <g className="s-tr">
+          <rect x="19" y="15" width="2" height="3" fill="#D97757" />
+          <rect x="21" y="18" width="2" height="2" fill="#D97757" />
+        </g>
       </g>
     </g>
   </svg>
 );
-
-export default SplashScreen;
