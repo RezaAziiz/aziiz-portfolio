@@ -3,26 +3,28 @@ import type { Project } from "../data/projects";
 interface Props {
   project: Project;
   translated: { title: string; subtitle: string };
+  onOpenDetail: (kind: "project" | "experience", id: string) => void;
 }
 
-const ExternalIcon = () => (
-  <svg
-    width="12"
-    height="12"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" />
-  </svg>
-);
-
-const ProjectItem = ({ project, translated }: Props) => {
+const ProjectItem = ({ project, translated, onOpenDetail }: Props) => {
   return (
-    <article className="project-item">
+    <a
+      className="project-item"
+      href={`?detail=project/${encodeURIComponent(project.id)}`}
+      onClick={(event) => {
+        if (
+          event.button !== 0 ||
+          event.metaKey ||
+          event.ctrlKey ||
+          event.shiftKey ||
+          event.altKey
+        ) {
+          return;
+        }
+        event.preventDefault();
+        onOpenDetail("project", project.id);
+      }}
+    >
       {/* Thumbnail placeholder */}
       <div className="project-thumb">
         <div className="project-thumb-placeholder">
@@ -48,19 +50,6 @@ const ProjectItem = ({ project, translated }: Props) => {
       <div className="project-info">
         <div className="project-info-title-row">
           <span className="project-info-name">{translated.title}</span>
-          <div className="project-info-links">
-            {project.demoUrl && (
-              <a
-                href={project.demoUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="project-ext-link"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <ExternalIcon />
-              </a>
-            )}
-          </div>
         </div>
 
         <p className="project-info-desc">{translated.subtitle}</p>
@@ -73,7 +62,7 @@ const ProjectItem = ({ project, translated }: Props) => {
           ))}
         </div>
       </div>
-    </article>
+    </a>
   );
 };
 

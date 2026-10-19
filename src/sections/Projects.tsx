@@ -2,7 +2,11 @@ import { projects } from "../data/projects";
 import ProjectItem from "../components/ProjectItem";
 import { usePreferences } from "../contexts/PreferencesContext";
 
-const Projects = () => {
+interface Props {
+  onOpenDetail: (kind: "project" | "experience", id: string) => void;
+}
+
+const Projects = ({ onOpenDetail }: Props) => {
   const { copy } = usePreferences();
 
   return (
@@ -16,6 +20,7 @@ const Projects = () => {
           key={project.id}
           project={project}
           translated={copy.projects.items[index]}
+          onOpenDetail={onOpenDetail}
         />
       ))}
     </section>

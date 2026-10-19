@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-19",
+  "fontStack": "Inter via index.html",
+  "palette": "Existing dark/light CSS custom properties in src/index.css",
+  "motion": "No general motion library; Lottie runtime is installed",
+  "spacing": "Existing spacing uses fixed values; detail page introduces local semantic tokens",
+  "framework": "React 19 + TypeScript + Vite 8; Tailwind CSS v4 plugin installed",
+  "preserve": ["Inter", "existing dark/light palette", "existing portfolio layout"],
+  "introduce": ["query-based detail view", "mobile-first detail layout", "replaceable detail content"]
+}

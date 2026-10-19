@@ -2,7 +2,11 @@ import { experiences } from "../data/experience";
 import ExperienceItem from "../components/ExperienceItem";
 import { usePreferences } from "../contexts/PreferencesContext";
 
-const Experience = () => {
+interface Props {
+  onOpenDetail: (kind: "project" | "experience", id: string) => void;
+}
+
+const Experience = ({ onOpenDetail }: Props) => {
   const { copy } = usePreferences();
 
   return (
@@ -13,6 +17,7 @@ const Experience = () => {
           key={exp.id}
           experience={exp}
           translated={copy.experience.items[index]}
+          onOpenDetail={onOpenDetail}
         />
       ))}
     </section>

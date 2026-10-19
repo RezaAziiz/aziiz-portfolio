@@ -1,0 +1,32 @@
+:root {
+  --color-paper: var(--bg);
+  --color-paper-soft: var(--bg-card);
+  --color-ink: var(--text-primary);
+  --color-body: var(--text-secondary);
+  --color-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-rule: var(--border-light);
+  --font-display: var(--font);
+  --font-body: var(--font);
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --text-xs: 0.6875rem;
+  --text-sm: 0.8125rem;
+  --text-md: 0.9375rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-display: clamp(2.25rem, 7vw, 4rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 140ms;
+  --dur-base: 220ms;
+  --rule-hairline: 1px solid var(--color-rule);
+  --radius-detail-sm: 0.25rem;
+  --radius-detail-md: 0.5rem;
+}

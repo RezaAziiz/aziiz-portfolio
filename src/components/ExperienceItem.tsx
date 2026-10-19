@@ -3,11 +3,27 @@ import type { Experience } from "../data/experience";
 interface Props {
   experience: Experience;
   translated: { role: string; bullets: string[] };
+  onOpenDetail: (kind: "project" | "experience", id: string) => void;
 }
 
-const ExperienceItem = ({ experience, translated }: Props) => {
+const ExperienceItem = ({ experience, translated, onOpenDetail }: Props) => {
   return (
-    <div className="exp-item">
+    <div
+      className="exp-item"
+      role="link"
+      tabIndex={0}
+      onClick={(event) => {
+        if (event.target instanceof Element && event.target.closest("a")) {
+          return;
+        }
+        onOpenDetail("experience", experience.id);
+      }}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" && event.target === event.currentTarget) {
+          onOpenDetail("experience", experience.id);
+        }
+      }}
+    >
       <div className="exp-item-header">
         <div className="exp-item-title-block">
           <span className="exp-item-role">{translated.role}</span>
